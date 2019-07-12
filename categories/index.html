@@ -390,7 +390,8 @@
           
 
   
-    <div class="comments" id="gitalk-container">
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NTI2OS8yMTc4Mg=="></div>
     </div>
 
   
@@ -700,30 +701,21 @@
   
     
 
-<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  
 
-
-
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
-
-
-
-<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
 
 <script>
-  var gitalk = new Gitalk({
-    clientID: 'ddf708163434e7112ed4',
-    clientSecret: '2e6ab1163822304c384c3ff97e8d8fa9e8bafbea',
-    repo: 'gitalk',
-    owner: 'wo2008shiji',
-    admin: ['wo2008shiji'],
-    id: md5(location.pathname),
-    
-      language: 'zh-CN',
-    
-    distractionFreeMode: ''
-  });
-  gitalk.render('gitalk-container');
+  window.livereOptions = {
+    refer: 'categories/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
 </script>
 
   
