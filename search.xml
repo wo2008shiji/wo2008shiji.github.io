@@ -1,20 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[第一篇文章]]></title>
-    <url>%2F2019%2F07%2F11%2F%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%2F</url>
-    <content type="text"><![CDATA[测试1测试22]]></content>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2019%2F07%2F14%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[计算机基础知识]]></title>
+    <url>%2F2019%2F07%2F11%2F%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%2F</url>
+    <content type="text"><![CDATA[二进制 计算机中的数据不同于人们生活中的数据，人们生活采用十进制数，而计算机全部采用二进制数表示，它只包含0、1两个数，逢二进一，1+1=10。每一个0或者每一个1，叫做一个bit（比特，位）。十进制转换二进制 除以2 取余 反向读二进制转换十进制 从右往左数字乘以2^0 + 数字乘以2^1 + … + 数字乘以2^n 字节字节是我们常见的计算机中最小存储单元。计算机存储任何的数据，都以字节的形式存储，右键文件属性，我们可以直接查看文件的字节大小。8个bit（二进制位）0000-0000表示为1个字节，写成1byte或者1B。·8bit = 1Byte·1024B = 1KB·1024MB = 1GB·1024GB = 1TB 常见DOS命令MS-DOS(Microsoft Disk Operating System)微软磁盘操作系统cmd(命令提示符)启动：Win+R 》》输入cmd回车x: 切换到盘符xcd + 路径跳转到目录（tab键可以自动补全路径）cd ..返回上一级目录cd \ 返回根目录dir 显示文件夹中的所有文件信息cls 清屏exit 退出cmd]]></content>
       <categories>
-        <category>无聊的测试</category>
+        <category>计算机基础知识计算机基础知识</category>
       </categories>
       <tags>
-        <tag>文章</tag>
-        <tag>测试</tag>
+        <tag>进制</tag>
+        <tag>计算机常识</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2019%2F07%2F07%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <title><![CDATA[java环境搭建]]></title>
+    <url>%2F2019%2F07%2F11%2Fjava%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%2F</url>
+    <content type="text"><![CDATA[java虚拟机—–JVM·JVM(Java Vrtual Mechine)：java虚拟机，简称JVM.是运行所有java程序的假想计算机，是java程序的运行环境，是java最具有吸引力 特性之一。我们编写的代码，都运行在JVM之上。·跨平台：任何软件的运行，都必须要运行在操作系统上，而我们用java编写的软件可以运行在任何的操作系统上，这个特性称为java语言的跨平台特性。该特性是由JVM实现的，我们编写的程序运行在JVM上，而JVM运行在操作系统上。 JRE和JDK·JRE(Java Runtime Environment)：是java程序的运行时环境，包含JVM和运行时所需要的核心类库。·JDK(Java Development Kit)：是java程序开发工具包，包含JRE和开发人员使用的工具。我们想要运行已有的一个java程序，那么只需安装JRE即可。我们想要开发一个全新的java程序，那么必须安装JDK。 下载安装JDK（以JDK1.8为例子，因为该版本使用量较大） Oracle首页 选择jdk1.8版本下载 点击Download 先勾选接受 后选择符合你系统的版本 最后登录Oracle账号就会自动下载了，没有账号的可以百度搜索一个。 双击下载好的jdk就可以安装 jdk中包含JRE不需要额外在安装一个独立的JRE 安装路径最好不要有中文和空格，一定要记住你的安装路径！！！！！！！！！！！后面会用到 安装完毕后 右键此电脑==》属性 按图中标号依次点击 按图中标号依次点击，最后选择你的jdk根目录 按图中标号依次点击和输入 打开命令提示符，输入红框中的内容，与图一致则完成配置]]></content>
+      <categories>
+        <category>java开发环境搭建</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
   </entry>
 </search>
