@@ -102,14 +102,14 @@
 
 
   <meta name="description" content="单一职责原则基本介绍对类来说的，即一个类应该只负责一项职责。如类A负责两个不同职责：职责1，职责2。 当职责1需求变更而改变A时，可能造成职责2执行错误，所以需要将类A的粒度分解为 A1，A2 应用实例 方案一 12345678910111213141516package principle.singleresponsibility;public class SingleResponsibilit">
-<meta name="keywords" content="设计模式,七大原则">
+<meta name="keywords" content="设计模式,七大原则,单一职责原则">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式七大原则之单一职责原则">
 <meta property="og:url" content="http://yoursite.com/java设计模式/设计模式七大原则之单一职责原则/index.html">
 <meta property="og:site_name" content="李大鹏的博客">
 <meta property="og:description" content="单一职责原则基本介绍对类来说的，即一个类应该只负责一项职责。如类A负责两个不同职责：职责1，职责2。 当职责1需求变更而改变A时，可能造成职责2执行错误，所以需要将类A的粒度分解为 A1，A2 应用实例 方案一 12345678910111213141516package principle.singleresponsibility;public class SingleResponsibilit">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-16T12:36:16.448Z">
+<meta property="og:updated_time" content="2019-07-16T13:13:08.795Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式七大原则之单一职责原则">
 <meta name="twitter:description" content="单一职责原则基本介绍对类来说的，即一个类应该只负责一项职责。如类A负责两个不同职责：职责1，职责2。 当职责1需求变更而改变A时，可能造成职责2执行错误，所以需要将类A的粒度分解为 A1，A2 应用实例 方案一 12345678910111213141516package principle.singleresponsibility;public class SingleResponsibilit">
@@ -409,7 +409,7 @@
                 
               
 
-              <time title="创建时间：2019-07-16 19:26:53 / 修改时间：20:36:16" itemprop="dateCreated datePublished" datetime="2019-07-16T19:26:53+08:00">2019-07-16</time>
+              <time title="创建时间：2019-07-16 19:26:53 / 修改时间：21:13:08" itemprop="dateCreated datePublished" datetime="2019-07-16T19:26:53+08:00">2019-07-16</time>
             </span>
           
 
@@ -499,7 +499,9 @@
 <li><p>方案一</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> principle.singleresponsibility;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingleResponsibility1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Vehicle vehicle = <span class="keyword">new</span> Vehicle();</span><br><span class="line">        vehicle.run(<span class="string">"汽车"</span>);</span><br><span class="line">        vehicle.run(<span class="string">"轮船"</span>);</span><br><span class="line">        vehicle.run(<span class="string">"飞机"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 交通工具类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Vehicle</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">(String vehicle)</span></span>&#123;</span><br><span class="line">        System.out.println(vehicle + <span class="string">"在公路上跑"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>*方案一分析</p>
+<ul>
+<li>方案一分析</li>
+</ul>
 <ol>
 <li>在run方法中，违反了单一职责原则</li>
 <li>解决的方案非常的简单，根据交通工具运行方法不同，分解成不同类即可</li>
@@ -599,6 +601,8 @@
             <a href="/tags/设计模式/" rel="tag">设计模式</a>
           
             <a href="/tags/七大原则/" rel="tag">七大原则</a>
+          
+            <a href="/tags/单一职责原则/" rel="tag">单一职责原则</a>
           
         </div>
       
@@ -773,7 +777,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">18</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -886,7 +894,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">31k</span>
+    <span title="站点总字数">35k</span>
   
 
   
@@ -897,7 +905,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">28 分钟</span>
+    <span title="站点阅读时长">31 分钟</span>
   
 </div>
 

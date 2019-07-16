@@ -3,13 +3,14 @@
   <entry>
     <title><![CDATA[设计模式七大原则之单一职责原则]]></title>
     <url>%2Fjava%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%83%E5%A4%A7%E5%8E%9F%E5%88%99%E4%B9%8B%E5%8D%95%E4%B8%80%E8%81%8C%E8%B4%A3%E5%8E%9F%E5%88%99%2F</url>
-    <content type="text"><![CDATA[单一职责原则基本介绍对类来说的，即一个类应该只负责一项职责。如类A负责两个不同职责：职责1，职责2。 当职责1需求变更而改变A时，可能造成职责2执行错误，所以需要将类A的粒度分解为 A1，A2 应用实例 方案一 12345678910111213141516package principle.singleresponsibility;public class SingleResponsibility1 &#123; public static void main(String[] args) &#123; Vehicle vehicle = new Vehicle(); vehicle.run("汽车"); vehicle.run("轮船"); vehicle.run("飞机"); &#125;&#125;// 交通工具类class Vehicle&#123; public void run(String vehicle)&#123; System.out.println(vehicle + "在公路上跑"); &#125;&#125; *方案一分析 在run方法中，违反了单一职责原则 解决的方案非常的简单，根据交通工具运行方法不同，分解成不同类即可 方案二 12345678910111213141516171819202122232425262728package principle.singleresponsibility;public class SingleResponsibility2 &#123; public static void main(String[] args) &#123; RoadVehicle roadVehicle = new RoadVehicle(); roadVehicle.run("汽车"); WaterVehicle waterVehicle = new WaterVehicle(); waterVehicle.run("轮船"); AirVehicle airVehicle = new AirVehicle(); airVehicle.run("飞机"); &#125;&#125;class RoadVehicle&#123; public void run(String vehicle)&#123; System.out.println(vehicle + "在公路上跑"); &#125;&#125;class WaterVehicle&#123; public void run(String vehicle)&#123; System.out.println(vehicle + "在水上跑"); &#125;&#125;class AirVehicle&#123; public void run(String vehicle)&#123; System.out.println(vehicle + "在空中跑"); &#125;&#125; 方案2的分析 遵守单一职责原则 但是这样做的改动很大，即将类分解，同时修改客户端 改进：直接修改Vehicle 类，改动的代码会比较少=&gt;方案3 方案三 12345678910111213141516171819202122package principle.singleresponsibility;public class SingleResponsibility3 &#123; public static void main(String[] args) &#123; Vehicle1 vehicle = new Vehicle1(); vehicle.runOnRoad("汽车"); vehicle.runOnWater("轮船"); vehicle.runOnAir("飞机"); &#125;&#125;class Vehicle1 &#123; public void runOnRoad(String vehicle) &#123; System.out.println(vehicle + "在公路上跑"); &#125; public void runOnWater(String vehicle) &#123; System.out.println(vehicle + "在水上跑"); &#125; public void runOnAir(String vehicle) &#123; System.out.println(vehicle + "在空中跑"); &#125;&#125; 方式3的分析 这种修改方法没有对原来的类做大的修改，只是增加方法 这里虽然没有在类这个级别上遵守单一职责原则，但是在方法级别上，仍然是遵守单一职责单一职责原则注意事项和细节1) 降低类的复杂度，一个类只负责一项职责。2) 提高类的可读性，可维护性3) 降低变更引起的风险4) 通常情况下，我们应当遵守单一职责原则，只有逻辑足够简单，才可以在代码级违 反单一职责原则；只有类中方法数量足够少，可以在方法级别保持单一职责原则]]></content>
+    <content type="text"><![CDATA[单一职责原则基本介绍对类来说的，即一个类应该只负责一项职责。如类A负责两个不同职责：职责1，职责2。 当职责1需求变更而改变A时，可能造成职责2执行错误，所以需要将类A的粒度分解为 A1，A2 应用实例 方案一 12345678910111213141516package principle.singleresponsibility;public class SingleResponsibility1 &#123; public static void main(String[] args) &#123; Vehicle vehicle = new Vehicle(); vehicle.run("汽车"); vehicle.run("轮船"); vehicle.run("飞机"); &#125;&#125;// 交通工具类class Vehicle&#123; public void run(String vehicle)&#123; System.out.println(vehicle + "在公路上跑"); &#125;&#125; 方案一分析 在run方法中，违反了单一职责原则 解决的方案非常的简单，根据交通工具运行方法不同，分解成不同类即可 方案二 12345678910111213141516171819202122232425262728package principle.singleresponsibility;public class SingleResponsibility2 &#123; public static void main(String[] args) &#123; RoadVehicle roadVehicle = new RoadVehicle(); roadVehicle.run("汽车"); WaterVehicle waterVehicle = new WaterVehicle(); waterVehicle.run("轮船"); AirVehicle airVehicle = new AirVehicle(); airVehicle.run("飞机"); &#125;&#125;class RoadVehicle&#123; public void run(String vehicle)&#123; System.out.println(vehicle + "在公路上跑"); &#125;&#125;class WaterVehicle&#123; public void run(String vehicle)&#123; System.out.println(vehicle + "在水上跑"); &#125;&#125;class AirVehicle&#123; public void run(String vehicle)&#123; System.out.println(vehicle + "在空中跑"); &#125;&#125; 方案2的分析 遵守单一职责原则 但是这样做的改动很大，即将类分解，同时修改客户端 改进：直接修改Vehicle 类，改动的代码会比较少=&gt;方案3 方案三 12345678910111213141516171819202122package principle.singleresponsibility;public class SingleResponsibility3 &#123; public static void main(String[] args) &#123; Vehicle1 vehicle = new Vehicle1(); vehicle.runOnRoad("汽车"); vehicle.runOnWater("轮船"); vehicle.runOnAir("飞机"); &#125;&#125;class Vehicle1 &#123; public void runOnRoad(String vehicle) &#123; System.out.println(vehicle + "在公路上跑"); &#125; public void runOnWater(String vehicle) &#123; System.out.println(vehicle + "在水上跑"); &#125; public void runOnAir(String vehicle) &#123; System.out.println(vehicle + "在空中跑"); &#125;&#125; 方式3的分析 这种修改方法没有对原来的类做大的修改，只是增加方法 这里虽然没有在类这个级别上遵守单一职责原则，但是在方法级别上，仍然是遵守单一职责单一职责原则注意事项和细节1) 降低类的复杂度，一个类只负责一项职责。2) 提高类的可读性，可维护性3) 降低变更引起的风险4) 通常情况下，我们应当遵守单一职责原则，只有逻辑足够简单，才可以在代码级违 反单一职责原则；只有类中方法数量足够少，可以在方法级别保持单一职责原则]]></content>
       <categories>
         <category>java设计模式</category>
       </categories>
       <tags>
         <tag>设计模式</tag>
         <tag>七大原则</tag>
+        <tag>单一职责原则</tag>
       </tags>
   </entry>
   <entry>
@@ -21,6 +22,7 @@
       </categories>
       <tags>
         <tag>java</tag>
+        <tag>流程控制</tag>
         <tag>选择语句</tag>
         <tag>循环语句</tag>
       </tags>
@@ -34,6 +36,7 @@
       </categories>
       <tags>
         <tag>java</tag>
+        <tag>流程控制</tag>
         <tag>判断语句</tag>
       </tags>
   </entry>
@@ -96,6 +99,7 @@
         <tag>java</tag>
         <tag>常量</tag>
         <tag>变量</tag>
+        <tag>数据类型</tag>
       </tags>
   </entry>
   <entry>
@@ -123,7 +127,7 @@
   <entry>
     <title><![CDATA[队列]]></title>
     <url>%2Fjava%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%2F%E9%98%9F%E5%88%97%2F</url>
-    <content type="text"><![CDATA[队列介绍1）队列是一个有序列表，可以用数组或是链表来实现。2）遵循先入先出的原则。即：先存入队列的数据，要先取出。后存入的要后取出3）示意图：(使用数组模拟队列示意图)数组模拟队列队列本身是有序列表，若使用数组的结构来存储队列的数据，则队列数组的声明如下图, 其中 maxSize 是该队列的最大容量。因为队列的输出、输入是分别从前后端来处理，因此需要两个变量 front及 rear分别记录队列前后端的下标，front 会随着数据输出而改变，而 rear则是随着数据输入而改变，如图所示:当我们将数据存入队列时称为”addQueue”，addQueue 的处理需要有两个步骤：思路分析1）将尾指针往后移：rear+1 , 当front == rear 【空】2）若尾指针 rear 小于队列的最大下标 maxSize-1，则将数据存入 rear所指的数组元素中，否则无法存入数据。 rear == maxSize - 1[队列满] 代码实现12345class ArrayQueue(arrMaxSize: Int) &#123; val maxSize: Int = arrMaxSize val array = new Array[Int](arrMaxSize) var front: Int = -1 var rear: Int = -1&#125;]]></content>
+    <content type="text"><![CDATA[队列介绍1）队列是一个有序列表，可以用数组或是链表来实现。2）遵循先入先出的原则。即：先存入队列的数据，要先取出。后存入的要后取出3）示意图：(使用数组模拟队列示意图)数组模拟队列队列本身是有序列表，若使用数组的结构来存储队列的数据，则队列数组的声明如下图, 其中 maxSize 是该队列的最大容量。因为队列的输出、输入是分别从前后端来处理，因此需要两个变量 front及 rear分别记录队列前后端的下标，front 会随着数据输出而改变，而 rear则是随着数据输入而改变，如图所示:当我们将数据存入队列时称为”addQueue”，addQueue 的处理需要有两个步骤：思路分析1）将尾指针往后移：rear+1 , 当front == rear 【空】2）若尾指针 rear 小于队列的最大下标 maxSize-1，则将数据存入 rear所指的数组元素中，否则无法存入数据。 rear == maxSize - 1[队列满] 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116package queue;import java.util.Scanner;public class ArrayQueueDemo &#123; public static void main(String[] args) &#123; //测试一把 //创建一个队列 ArrayQueue queue = new ArrayQueue(3); char key = ' '; //接收用户输入 Scanner scanner = new Scanner(System.in);// boolean loop = true; //输出一个菜单 while (loop) &#123; System.out.println("s(show): 显示队列"); System.out.println("e(exit): 退出程序"); System.out.println("a(add): 添加数据到队列"); System.out.println("g(get): 从队列取出数据"); System.out.println("h(head): 查看队列头的数据"); key = scanner.next().charAt(0);//接收一个字符 switch (key) &#123; case 's': queue.showQueue(); break; case 'a': System.out.println("输出一个数"); int value = scanner.nextInt(); queue.addQueue(value); break; case 'g': //取出数据 try &#123; int res = queue.getQueue(); System.out.printf("取出的数据是%d\n", res); &#125; catch (Exception e) &#123; // TODO: handle exception System.out.println(e.getMessage()); &#125; break; case 'h': //查看队列头的数据 try &#123; int res = queue.headQueue(); System.out.printf("队列头的数据是%d\n", res); &#125; catch (Exception e) &#123; // TODO: handle exception System.out.println(e.getMessage()); &#125; break; case 'e': //退出 scanner.close(); loop = false; break; default: break; &#125; &#125; System.out.println("程序退出~~"); &#125;&#125;class ArrayQueue &#123; private int maxSize; private int front; private int rear; private int[] array; public ArrayQueue(int maxSize) &#123; this.maxSize = maxSize;//队列的最大长度 array = new int[maxSize];//数组的长度等于队列最大长度 front = -1;//对头指针 rear = -1;//队尾指针 &#125; public boolean isFull() &#123; return rear == maxSize - 1; &#125; public boolean isEmpty() &#123; return rear == front; &#125; public void addQueue(int value) &#123; if (isFull()) &#123; System.out.println("队列满了，你就别加了"); &#125; else &#123; array[++rear] = value; &#125; &#125; public int getQueue() &#123; if (isEmpty()) &#123; throw new RuntimeException("队列为空，你上哪取数据啊"); &#125; else &#123; return array[++front]; &#125; &#125; public void showQueue() &#123; if (isEmpty()) &#123; System.out.println("队列为空"); &#125; else &#123; for (int i = front +1; i &lt;= rear; i++) &#123; System.out.printf("%d\t", array[i]); &#125; &#125; &#125; public int headQueue() &#123; if (isEmpty()) &#123; throw new RuntimeException("队列为空，你上哪取数据啊"); &#125; else &#123; return array[front + 1]; &#125; &#125;&#125;&#125; 问题分析并优化 目前数组使用一次就不能用，没有达到服用的效果 将这个数组使用算法，改进成一个环形的队列 取模：%]]></content>
       <categories>
         <category>java数据结构和算法</category>
       </categories>
